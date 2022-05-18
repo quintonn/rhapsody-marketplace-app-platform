@@ -10,7 +10,7 @@ RUN dotnet restore
 # copy everything else and build app
 COPY marketplace/. ./marketplace/
 WORKDIR /source/marketplace
-RUN dotnet publish -c release -o /app --no-restore
+RUN dotnet publish -c release -o ./app --no-restore
 
 COPY marketplace/wwwroot/. ./app/wwwroot/
 
