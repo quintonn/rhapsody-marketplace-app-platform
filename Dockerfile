@@ -16,7 +16,7 @@ RUN dotnet publish -c release -o /app --no-restore
 FROM mcr.microsoft.com/dotnet/sdk:6.0
 WORKDIR /app
 COPY --from=build /app ./
-RUN mkdir /Data
+RUN mkdir -p /app/Data
 EXPOSE 80
 EXPOSE 5000
 EXPOSE 5001

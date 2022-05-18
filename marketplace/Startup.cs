@@ -29,7 +29,7 @@ namespace Marketplace
             Console.WriteLine("*****************");
             try
             {
-                //var tmp = TempDataStore.GetInstance(true, true, Config, services);
+                var tmp = TempDataStore.GetInstance(true, true, Config, services);
             }
             catch (Exception ex)
             {
