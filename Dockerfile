@@ -12,6 +12,8 @@ COPY marketplace/. ./marketplace/
 WORKDIR /source/marketplace
 RUN dotnet publish -c release -o /app --no-restore
 
+COPY marketplace/wwwroot. ./app/wwwroot/
+
 # final stage/image
 FROM mcr.microsoft.com/dotnet/sdk:6.0
 WORKDIR /app
