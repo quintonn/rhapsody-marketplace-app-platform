@@ -15,8 +15,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <!-- This is needed to have the website run with ISS -->
-    <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
   <ItemGroup>
