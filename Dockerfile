@@ -16,7 +16,7 @@ RUN dotnet publish -c release -o /app --no-restore
 FROM mcr.microsoft.com/dotnet/sdk:6.0
 WORKDIR /app
 COPY --from=build /app ./
-RUN mkdir -p /Data
+RUN mkdir -p /app/Data
 ENV ASPNETCORE_URLS=http://+:8080 \
     # Enable detection of running in a container
     DOTNET_RUNNING_IN_CONTAINER=true \
