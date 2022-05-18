@@ -10,6 +10,7 @@ using QBic.Core.Utilities;
 using System;
 using System.Configuration;
 using System.Data;
+using System.IO;
 
 namespace Marketplace
 {
@@ -144,6 +145,10 @@ namespace Marketplace
                 ProviderName = "SQLITE";
                 var currentDirectory = QBicUtils.GetCurrentDirectory();
                 Console.WriteLine("Current directory = " + currentDirectory);
+                Console.WriteLine("Current directory exists = " + Directory.Exists(currentDirectory));
+                var tmp = "." + currentDirectory;
+                Console.WriteLine("Current directory = " + tmp);
+                Console.WriteLine("Current directory exists = " + Directory.Exists(tmp));
                 connectionString = connectionString.Replace("##CurrentDirectory##", currentDirectory); // for my sqlite connectiontion string
                 Console.WriteLine("connectionString = " + connectionString);
 
