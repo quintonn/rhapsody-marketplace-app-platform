@@ -17,6 +17,6 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0
 WORKDIR /app
 COPY --from=build /app ./
 RUN mkdir -p /app/Data
-ENV ASPNETCORE_URLS=http://+:80
-EXPOSE 80
+ENV ASPNETCORE_URLS=http://+:5000
+EXPOSE 5000
 ENTRYPOINT ["dotnet", "Marketplace.dll"]
