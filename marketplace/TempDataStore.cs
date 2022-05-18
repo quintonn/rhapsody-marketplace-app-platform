@@ -146,9 +146,12 @@ namespace Marketplace
                 var currentDirectory = QBicUtils.GetCurrentDirectory();
                 Console.WriteLine("Current directory = " + currentDirectory);
                 Console.WriteLine("Current directory exists = " + Directory.Exists(currentDirectory));
-                var tmp = "." + currentDirectory;
-                Console.WriteLine("Current directory = " + tmp);
-                Console.WriteLine("Current directory exists = " + Directory.Exists(tmp));
+
+                var filePath = currentDirectory + "/Data/appData.db";
+                Console.WriteLine(filePath + " exists => " + File.Exists(filePath));
+                Console.WriteLine("Dir " + currentDirectory + "/Data" + " exists = " + Directory.Exists(currentDirectory + "/Data"));
+
+
                 connectionString = connectionString.Replace("##CurrentDirectory##", currentDirectory); // for my sqlite connectiontion string
                 Console.WriteLine("connectionString = " + connectionString);
 
