@@ -16,7 +16,7 @@ namespace Marketplace
         {
             var builder = new WebHostBuilder();
 
-            builder.UseIISIntegration();
+            //builder.UseIISIntegration();
             builder.UseKestrel();
 
 
