@@ -26,17 +26,6 @@ namespace Marketplace
                 x.AddConsole();
                 x.AddDebug();
             });
-            Console.WriteLine("*****************");
-            try
-            {
-                //var tmp = TempDataStore.GetInstance(true, true, Config, services);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error getting temp data store instance");
-                Console.WriteLine(ex.ToString());
-            }
-            Console.WriteLine("DONE");
 
             //services.AddScoped<UserInjector, DefaultUserInjector>(); // can i override the default one?
             //User can override UserInjector with their own injector class
