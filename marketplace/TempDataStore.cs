@@ -149,6 +149,8 @@ namespace Marketplace
 
                 var filePath = currentDirectory + "/Data/appData.db";
                 Console.WriteLine(filePath + " exists => " + File.Exists(filePath));
+
+                Directory.CreateDirectory(currentDirectory + "/Data");
                 Console.WriteLine("Dir " + currentDirectory + "/Data" + " exists = " + Directory.Exists(currentDirectory + "/Data"));
 
 
