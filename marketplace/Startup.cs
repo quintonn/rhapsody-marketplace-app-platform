@@ -27,8 +27,17 @@ namespace Marketplace
                 x.AddDebug();
             });
             Console.WriteLine("*****************");
-            var mainConnectionString = Config.GetConnectionString("MainDataStore");
-            Console.WriteLine(mainConnectionString);
+            try
+            {
+                var tmp = TempDataStore.GetInstance(true, true, Config, services);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error getting temp data store instance");
+                Console.WriteLine(ex.ToString());
+            }
+            Console.WriteLine("DONE");
+
             //services.AddScoped<UserInjector, DefaultUserInjector>(); // can i override the default one?
             //User can override UserInjector with their own injector class
             services.UseQBic<AppSettings, AppStartup>(Config);
