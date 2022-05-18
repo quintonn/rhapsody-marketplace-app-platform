@@ -26,6 +26,9 @@ namespace Marketplace
                 x.AddConsole();
                 x.AddDebug();
             });
+            Console.WriteLine("*****************");
+            var mainConnectionString = Config.GetConnectionString("MainDataStore");
+            Console.WriteLine(mainConnectionString);
             //services.AddScoped<UserInjector, DefaultUserInjector>(); // can i override the default one?
             //User can override UserInjector with their own injector class
             services.UseQBic<AppSettings, AppStartup>(Config);
