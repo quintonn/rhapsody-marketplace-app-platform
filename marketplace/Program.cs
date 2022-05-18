@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using System;
 using System.IO;
 
 namespace Marketplace
@@ -9,7 +10,17 @@ namespace Marketplace
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            Console.WriteLine("Main starting");
+            try
+            {
+                CreateHostBuilder(args).Build().Run();
+                Console.WriteLine("Main after run");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Application error: " + ex.Message);
+                Console.WriteLine(ex.StackTrace);
+            }
         }
 
         public static IWebHostBuilder CreateHostBuilder(string[] args)
