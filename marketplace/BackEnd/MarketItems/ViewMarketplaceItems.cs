@@ -38,7 +38,7 @@ namespace Marketplace.BackEnd.MarketItems
         {
             columnConfig.AddStringColumn("Name", "Name");
             columnConfig.AddStringColumn("Description", "Description");
-            columnConfig.AddDateColumn("LastUpdate", "LastUpdate");
+            columnConfig.AddDateColumn("Last Updated", "LastUpdate");
 
             var userTask = QBicUtils.GetLoggedInUserAsync(UserManager, HttpContextAccessor);
             userTask.Wait();

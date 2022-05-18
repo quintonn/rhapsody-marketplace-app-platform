@@ -18,6 +18,8 @@ namespace Marketplace.SiteSpecific
 
         public override string SystemEmailAddress => "system@example.com";
 
+        public override bool TokenEndpointAllowInsecureHttpRequests => true;
+
         public override string GetApplicationName()
         {
             return "Marketplace";

@@ -31,9 +31,9 @@
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
     <PackageReference Include="BouncyCastle.NetCoreSdk" Version="1.9.3.1" />
     <PackageReference Include="Microsoft.Extensions.Logging.AzureAppServices" Version="5.0.8" />
-    <PackageReference Include="QBic.Core" Version="5.0.0.7" />
+    <PackageReference Include="QBic.Core" Version="5.0.0.9" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
-    <PackageReference Include="WebsiteTemplate" Version="5.0.0.21" />
+    <PackageReference Include="WebsiteTemplate" Version="5.0.0.25" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="5.0.8" />
     <PackageReference Include="System.Data.SQLite.Core" Version="1.0.114.3" />
   </ItemGroup>

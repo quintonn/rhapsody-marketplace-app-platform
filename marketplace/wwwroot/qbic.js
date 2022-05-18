@@ -11483,11 +11483,13 @@ return((r[1].length===0)?r[0]:null);};};Date.parseExact=function(s,fx){return Da
                 switch (self.inputType)
                 {
                     case 5: // List Source
-                        var defaultList = defaultValue || [];
+                        var defaultList = defaultValue || "";
+                        console.log(defaultList);
+                        defaultList = defaultList.split(",");
                         var listSource = inputSetting.ListSource; // (Key, Value)
                         listSource = $.map(listSource, function (item)
                         {
-                            var selected = defaultList.indexOf(item.Key) > -1;
+                            var selected = defaultList == item.Key;
                             return new listSourceItemModel(selected, item.Value, item.Key);
                         });
                         self.listSource(listSource);
@@ -21788,14 +21790,15 @@ $(document).ready(function ()
 {
     var apiVersion = "v1";
 
-    var scheme = "https";
+    var scheme = window.location.protocol;//"https";
+
     
-    mainApp.baseURL = scheme + "://" + window.location.host + window.location.pathname;
+    mainApp.baseURL = scheme + "//" + window.location.host + window.location.pathname;
     
     mainApp.apiURL = "api/" + apiVersion + "/";
     
     mainApp.version = "";
-
+    
     mainApp.initializeApplication = function ()
     {
         dialog.showBusyDialog("Initializing...");
@@ -22291,12 +22294,13 @@ function menuContainer()
                         {
                             if (inp.inputType == 5) // List Selection
                             {
-                                var defaultList = inpValue || [];
-
+                                var defaultList = inpValue || "";
+                                console.log(defaultList);
+                                defaultList = defaultList.split(",");
                                 var listSource = item.ListItems
                                 listSource = $.map(listSource, function (item)
                                 {
-                                    var selected = defaultList.indexOf(item.Key) > -1;
+                                    var selected = defaultList == item.Key;
                                     return new listSourceItemModel(selected, item.Value, item.Key);
                                 });
                                 inp.listSource(listSource);
