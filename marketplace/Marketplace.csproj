@@ -33,7 +33,7 @@
     <PackageReference Include="Microsoft.Extensions.Logging.AzureAppServices" Version="5.0.8" />
     <PackageReference Include="QBic.Core" Version="5.0.0.9" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
-    <PackageReference Include="WebsiteTemplate" Version="5.0.0.29" />
+    <PackageReference Include="WebsiteTemplate" Version="5.0.0.30" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="5.0.8" />
     <PackageReference Include="System.Data.SQLite.Core" Version="1.0.114.3" />
   </ItemGroup>
