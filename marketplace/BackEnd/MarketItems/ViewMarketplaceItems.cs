@@ -53,7 +53,7 @@ namespace Marketplace.BackEnd.MarketItems
                 },
                 Display = ColumnDisplayType.Show
             });
-            
+
             columnConfig.AddButtonColumn("", "Id", "Details", MenuNumber.MarketplaceItemDetails);
             columnConfig.AddLinkColumn("", "Id", "Download", MenuNumber.DownloadMarketplaceItem);
 
@@ -61,7 +61,7 @@ namespace Marketplace.BackEnd.MarketItems
             {
                 Conditions = new System.Collections.Generic.List<Condition>()
                 {
-                   // new Condition("OwnerId", Comparison.Equals, currentUser?.Id)
+                    new Condition("OwnerId", Comparison.Equals, currentUser?.Id)
                 },
                 Display = ColumnDisplayType.Show
             });
