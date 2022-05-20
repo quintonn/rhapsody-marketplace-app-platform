@@ -39,6 +39,7 @@ namespace Marketplace.BackEnd.MarketItems
             columnConfig.AddStringColumn("Name", "Name");
             columnConfig.AddStringColumn("Description", "Description");
             columnConfig.AddDateColumn("Last Updated", "LastUpdate");
+            columnConfig.AddDateColumn("Owner", "Owner");
 
             var userTask = QBicUtils.GetLoggedInUserAsync(UserManager, HttpContextAccessor);
             userTask.Wait();
@@ -46,7 +47,7 @@ namespace Marketplace.BackEnd.MarketItems
 
             columnConfig.AddLinkColumn("", "Id", "Edit", MenuNumber.EditMarketplaceItem, new ShowHideColumnSetting()
             {
-                Conditions = new System.Collections.Generic.List<Condition>()
+                Conditions = new List<Condition>()
                 {
                     new Condition("OwnerId", Comparison.Equals, currentUser?.Id)
                 },
@@ -60,7 +61,7 @@ namespace Marketplace.BackEnd.MarketItems
             {
                 Conditions = new System.Collections.Generic.List<Condition>()
                 {
-                    new Condition("OwnerId", Comparison.Equals, currentUser?.Id)
+                   // new Condition("OwnerId", Comparison.Equals, currentUser?.Id)
                 },
                 Display = ColumnDisplayType.Show
             });
@@ -79,7 +80,8 @@ namespace Marketplace.BackEnd.MarketItems
                     d.Name,
                     d.Description,
                     d.Id,
-                    d.OwnerId,
+                    Owner = d.Owner?.UserName,
+                    OwnerId = d.Owner?.Id,
                     d.LastUpdate
                 }).ToList();
                 return result;

@@ -49,7 +49,7 @@ namespace Marketplace.BackEnd.MarketItems
             userTask.Wait();
             var currentUser = userTask.Result as User;
 
-            if (IsNew || currentUser.Id == Item.OwnerId)
+            if (IsNew || currentUser.Id == Item.Owner?.Id)
             {
                 result.Add(new FileInput("File", "File", null, null, false));
             }
@@ -65,7 +65,7 @@ namespace Marketplace.BackEnd.MarketItems
             if (isNew)
             {
                 dbItem = new UserItem();
-                dbItem.OwnerId = GetValue("Owner");
+                dbItem.Owner = session.Get<User>(GetValue("Owner"));
             }
             else
             {
