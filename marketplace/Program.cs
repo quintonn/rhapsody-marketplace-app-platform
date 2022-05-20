@@ -23,12 +23,17 @@ namespace Marketplace
             }
         }
 
+        static long MAX_REQUEST_BODY_BYTES = 100 * 1024 * 1024; // 100MB
+
         public static IWebHostBuilder CreateHostBuilder(string[] args)
         {
             var builder = new WebHostBuilder();
 
             //builder.UseIISIntegration();
-            builder.UseKestrel();
+            builder.UseKestrel(opt =>
+            {
+                opt.Limits.MaxRequestBodySize = MAX_REQUEST_BODY_BYTES;
+            });
 
 
             builder.UseContentRoot(Directory.GetCurrentDirectory());
